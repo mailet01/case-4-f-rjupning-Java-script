@@ -1,9 +1,9 @@
 
 async function GetInfoFromNasa() {
-const data = await fetch('https://api.nasa.gov/planetary/apod?api5u5zxlHOP7rkZVQUfDMRaJ9nUQYA3zJrDmaPlV95_=)')
-.then((Response) => Response.json())
-console.log(data.then)
-
-
-document.getElementById("container");
+    const inputData = document.getElementById("userinput");
 }
+const button = document.querySelector("#button");
+button.addEventListener("click", => {
+fetch("https://api.nasa.gov/planetary/apod?api_key=5u5zxlHOP7rkZVQUfDMRaJ9nUQYA3zJrDmaPlV95")
+.then((response) => response.json())
+})
