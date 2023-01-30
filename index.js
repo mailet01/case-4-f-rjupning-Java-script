@@ -8,19 +8,28 @@ const button = document.getElementById("hämta");
 
 button.addEventListener("click", () => {
 
-    fetch("https://api.nasa.gov/planetary/apod?api_key=5u5zxlHOP7rkZVQUfDMRaJ9nUQYA3zJrDmaPlV95")
+    fetch("GET /search?q={q}")
         .then(response => response.json())
         .then((data) => {
             console.log("data", data);
-         for (const key in data) {
-  
-            render(key, data[key])
-         }
+            for (const key in data) {
+
+                render(key, data[key])
+            }
         });
 
-    });
+});
 
-function render (property, value) {
-console.log("property", property, "value", value)
+function render(property, value) {
+    console.log("property", property, "value", value)
+    let h4 = document.createElement("h4");
+    h4.textContent = "property"
+    let p = document.createElement("p");
+    let ul = document.createElement("ul");
+    ul.innerHTML = value.map(val => `<li>${val}</li>`.join(""))
+    p.appendChild(li)
+
 }
+
+
 
