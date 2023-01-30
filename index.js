@@ -8,7 +8,7 @@ const button = document.getElementById("hämta");
 
 button.addEventListener("click", () => {
 
-    fetch("GET /search?q={q}")
+    fetch("https://images-api.nasa.gov/search?q=apollo")
         .then(response => response.json())
         .then((data) => {
             console.log("data", data);
