@@ -1,14 +1,14 @@
 async function GetInfoFromNasa() {
     const data = await fetch("")
     const response = await response.json();
-    document.getElementById("container")
+const contentEl =  document.getElementById("container")
 }
 const inputData = document.getElementById("userinput");
 const button = document.getElementById("hämta");
 
 button.addEventListener("click", () => {
 
-    fetch("https://images-api.nasa.gov/search?q=apollo")
+    fetch("https://images-api.nasa.gov/search?q=planets")
         .then(response => response.json())
         .then((data) => {
             console.log("data", data);
@@ -22,14 +22,6 @@ button.addEventListener("click", () => {
 
 function render(property, value) {
     console.log("property", property, "value", value)
-    let h4 = document.createElement("h4");
-    h4.textContent = "property"
-    let p = document.createElement("p");
-    let ul = document.createElement("ul");
-    ul.innerHTML = value.map(val => `<li>${val}</li>`.join(""))
-    p.appendChild(li)
-
+    document.getElementById("container").innerHTML+= value.items[0].href
+    
 }
-
-
-
