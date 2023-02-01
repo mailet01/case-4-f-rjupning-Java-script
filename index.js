@@ -3,15 +3,34 @@ async function GetInfoFromNasa() {
     const response = await response.json();
 const contentEl =  document.getElementById("container")
 }
+const container = document.getElementById("container")
 const inputData = document.getElementById("userinput");
 const button = document.getElementById("hämta");
+let url; 
+url = "https://images-api.nasa.gov/search?q="
+// url = "index.json"
+
+
 
 button.addEventListener("click", () => {
-
-    fetch("https://images-api.nasa.gov/search?q=planets")
+// använd det som står i sökfältet
+console.log(inputData.value);
+let search = inputData.value;
+// koppla värdet till urlen
+url = url+search
+console.log("söksträng", url)
+    fetch(url)
         .then(response => response.json())
         .then((data) => {
-            console.log("data", data);
+        
+            // console.log("data", data);
+            console.log(data.collection.items)
+            data.collection.items.forEach(item => {
+                // console.log("item", item.data[0].description)
+                const description = item.data[0].description
+                const media_type = item.data[0].media_type            
+                container.innerHTML += `<p>${description}</p><p>${media_type}</p>`
+            });
             for (const key in data) {
 
                 render(key, data[key])
