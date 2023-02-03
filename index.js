@@ -29,7 +29,7 @@ console.log("söksträng", url)
                 // console.log("item", item.data[0].description)
                 const description = item.data[0].description
                 const media_type = item.data[0].media_type            
-                container.innerHTML += `<p>${description}</p><p>${media_type}</p>`
+                container.innerHTML += `<p>${description}</p> <img src =>${media_type}`
             });
             for (const key in data) {
 
