@@ -13,16 +13,49 @@ url = "https://images-api.nasa.gov/search?q="
 
 
 button.addEventListener("click", () => {
-// använd det som står i sökfältet
+
+    // använd det som står i sökfältet
 console.log(inputData.value);
 let search = inputData.value;
 // koppla värdet till urlen
 url = url+search
 console.log("söksträng", url)
-    fetch(url)
+
+fetch(url)
         .then(response => response.json())
         .then((data) => {
-        
+let dateString = "2016-01-20T00:00:00Z";
+let date = new Date(dateString);
+dateString = "2017-06-20T00:00:00Z";
+date = new Date(dateString);
+dateString = "2003-06-20T00:02:58Z";
+date = new Date(dateString);
+dateString = "2017-02-23T00:00:00Z";
+date = new Date(dateString);
+dateString  "2005-03-14T13:55:00Z";
+date = new Date(dateString);
+dateString = "2008-02-25T13:50:45Z";
+date = new Date(dateString);
+dateString = "2008-06-05T12:50:52Z";
+date = new Date(dateString);
+dateString = "2011-08-25T21:00:54Z";
+date = new Date(dateString);
+dateString = "2007-04-11T16:55:50Z";
+date = new Date(dateString);
+dateString = "2017-11-15T00:00:00Z";
+date = new Date(dateString);
+dateString = "2010-03-31T19:03:37Z";
+date = new Date(dateString);
+dateString = "2006-02-07T13:50:01Z";
+date = new Date(dateString);
+dateString = "2011-06-17T16:00:00Z";
+date = new Date(dateString);
+dateString = "2008-10-07T16:00:03Z";
+date = new Date(dateString);
+dateString = "2013-02-14T18:12:21Z";
+date = new Date(dateString);
+dateString = "2009-06-19T12:48:30Z";
+date = new Date(dateString);
             // console.log("data", data);
             console.log(data.collection.items)
             data.collection.items.forEach(item => {

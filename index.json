@@ -140,7 +140,7 @@
                 "data": [
                     {
                         "center": "JPL",
-                        "title": "Background Planet",
+                       "title": "Background Planet",
                         "nasa_id": "PIA09844",
                         "date_created": "2008-02-25T13:50:45Z",
                         "keywords": [
@@ -868,7 +868,7 @@
                             "protoplanet"
                         ],
                         "nasa_id": "40_SmallestTerrestrialPlanet",
-                        "date_created": "2011-12-09T00:00:00Z",
+                       "date_created": "2011-12-09T00:00:00Z",
                         "media_type": "video",
                         "description": "NASA's Dawn probe has found some surprising things on the giant asteroid Vesta--things that have prompted one researcher to declare Vesta \"the smallest terrestrial planet.\""
                     }
