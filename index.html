@@ -17,19 +17,71 @@
 <div>
     <input type="text" name="" id="userinput" placeholder="skriv in ditt sökord">
 <fieldset>
-<legend>välj egenskap att filtrera mellan</legend>    
-<input type="number" name="" id="" min="1960" max="2023"> 
-<input type="checkbox">
-<input type="checkbox" name="images" id="images"> images
+<legend>filtrera på år:</legend>    
+<input type="number" name="start year" id="year" min="2008"> 
+<input type="number" name="end year" id="year-end" max="2023">
+<button id="hämta">hämta data</button>
+
 </fieldset>
+<!-- <span id="ajaxSpinner" class="hidden">loading
+    <svg width="135" height="140" viewBox="0 0 135 140" xmlns="http://www.w3.org/2000/svg" fill="#fff">
+    <rect y="10" width="15" height="120" rx="6">
+        <animate attributeName="height"
+             begin="0.5s" dur="1s"
+             values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear"
+             repeatCount="indefinite" />
+        <animate attributeName="y"
+             begin="0.5s" dur="1s"
+             values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear"
+             repeatCount="indefinite" />
+    </rect>
+    <rect x="30" y="10" width="15" height="120" rx="6">
+        <animate attributeName="height"
+             begin="0.25s" dur="1s"
+             values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear"
+             repeatCount="indefinite" />
+        <animate attributeName="y"
+             begin="0.25s" dur="1s"
+             values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear"
+             repeatCount="indefinite" />
+    </rect>
+    <rect x="60" width="15" height="140" rx="6">
+        <animate attributeName="height"
+             begin="0s" dur="1s"
+             values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear"
+             repeatCount="indefinite" />
+        <animate attributeName="y"
+             begin="0s" dur="1s"
+             values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear"
+             repeatCount="indefinite" />
+    </rect>
+    <rect x="90" y="10" width="15" height="120" rx="6">
+        <animate attributeName="height"
+             begin="0.25s" dur="1s"
+             values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear"
+             repeatCount="indefinite" />
+        <animate attributeName="y"
+             begin="0.25s" dur="1s"
+             values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear"
+             repeatCount="indefinite" />
+    </rect>
+    <rect x="120" y="10" width="15" height="120" rx="6">
+        <animate attributeName="height"
+             begin="0.5s" dur="1s"
+             values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear"
+             repeatCount="indefinite" />
+        <animate attributeName="y"
+             begin="0.5s" dur="1s"
+             values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear"
+             repeatCount="indefinite" />
+    </rect>
+</svg></span> -->
 </div>
     <div id="container"></div>
-    <button id="hämta">hämta data</button>
 
     <script src="index.js"></script>
     <footer>
         En sida av Emil Näslund
     </footer>
 </body>
-
 </html>
