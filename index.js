@@ -36,7 +36,7 @@ button.addEventListener("click", () => {
     let search = inputData.value;
     // koppla värdet till URL:n
     url = url + search
-    console.log("söksträng", url)
+    
     // deklarerar en variabel för att kunna filtrera på år
     let year = document.getElementById("year").value
     // start år att filtrera på
@@ -52,9 +52,7 @@ button.addEventListener("click", () => {
     fetch(url)
         // svaret från sökningen
         .then(response => response.json())
-        .then((data) => {
-
-            console.log(data.collection.items)
+        .then((data) => {            
             data.collection.items.forEach(item => {
                 // variabel för texten på sidan
                 const description = item.data[0].description
@@ -76,7 +74,7 @@ button.addEventListener("click", () => {
 });
 
 function render(property, value) {
-    console.log("property", property, "value", value)
+    
     document.getElementById("container").innerHTML += value.items[0].href
 
 }
