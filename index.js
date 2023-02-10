@@ -7,12 +7,12 @@ async function GetInfoFromNasa() {
     // skapar en variabel för divelementet i HTML-filen
     const contentEl = document.getElementById("container")
 }
-const container = document.getElementById("container")
+
 // skapar en variabel för sökfältet
 const inputData = document.getElementById("userinput");
 // skapar en variabel för knappen hämta data
 const button = document.getElementById("hämta");
-// const ajaxSpinner = document.querySelector("#ajaxSpinner");
+const ajaxSpinner = document.querySelector("#ajaxSpinner");
 // deklarerar en variabel för url:n
 let url;
 // lägger in själva url:n till mitt API
@@ -24,17 +24,17 @@ url = "https://images-api.nasa.gov/search?q="
 // skapar en händelselyssnare för knappen "hämta data"
 button.addEventListener("click", () => {
 
-    // ajaxSpinner.classList = "";
-    // setTimeout(() => {
-    //     content.textContent = "hej, så här ser responsen ut...";
+    ajaxSpinner.classList = "";
+    setTimeout(() => {
+        
 
-    //     // dölj ajaxsspinner
-    //     ajaxSpinner.className = "hidden";}, 2000)
+// dölj ajaxsspinner
+        ajaxSpinner.className = "hidden";}, 2000)
     // använd det som står i sökfältet
     // loggar ut det som har sökts på sidan
     console.log(inputData.value);
     let search = inputData.value;
-    // koppla värdet till urlen
+    // koppla värdet till URL:n
     url = url + search
     console.log("söksträng", url)
     // deklarerar en variabel för att kunna filtrera på år
