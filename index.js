@@ -1,11 +1,12 @@
+const contentEl = document.getElementById("container")
 // skapar en assymkrom funktion
-async function GetInfoFromNasa() {
+async function GetInfoFromNasa(evt) {
     // skapar en variabel för fetch
     const data = await fetch("")
     // skapar en variabel för responsen av sökningen av data
     const response = await response.json();
     // skapar en variabel för divelementet i HTML-filen
-    const contentEl = document.getElementById("container")
+    
 }
 
 // skapar en variabel för sökfältet
@@ -19,59 +20,62 @@ let url;
 url = "https://images-api.nasa.gov/search?q="
 // url = "index.json"
 
-
-
 // skapar en händelselyssnare för knappen "hämta data"
 button.addEventListener("click", () => {
-
-    ajaxSpinner.classList = "";
-    setTimeout(() => {
-        
-
+    ajaxSpinner.classList = ""
+contentEl.innerHTML = ""
 // dölj ajaxsspinner
-        ajaxSpinner.className = "hidden";}, 2000)
-    // använd det som står i sökfältet
-    // loggar ut det som har sökts på sidan
+        ajaxSpinner.className = "hidden";
+// skapar ett vilkor som kontrollerar om inputfältet innehåller minst 2 tecken
+    if(inputData.value.length <2) {
+alert("du måste skriva in minst 2 tecken")
+
+} else {
+    // loggar ut det som har sökts på sidan    
     console.log(inputData.value);
-    let search = inputData.value;
-    // koppla värdet till URL:n
-    url = url + search
+        inputData.value = "";
+        let search = inputData.value;
+        // koppla värdet till URL:n
+        url = url + search
     
-    // deklarerar en variabel för att kunna filtrera på år
-    let year = document.getElementById("year").value
-    // start år att filtrera på
-    url = url + "&year_start=" + year
-    // deklarerar en variabel för slutåret att filtrera på
-    let yearEnd = document.getElementById("year-end").value;
-    // slutåret att filtrera på:
-    url = url + "&year_end=" + yearEnd
-    // tömmer inputfältet    // 
-    inputData.value = "";
+        // deklarerar en variabel för att kunna filtrera på år
+        let year = document.getElementById("year").value
+        // start år att filtrera på
+        url = url + "&year_start=" + year
+        // deklarerar en variabel för slutåret att filtrera på
+        let yearEnd = document.getElementById("year-end").value;
+        // slutåret att filtrera på:
+        url = url + "&year_end=" + yearEnd
+        // tömmer inputfältet    // 
+        
+        // metoden fetch
+        fetch(url)
+            // svaret från sökningen
+            .then(response => response.json())        
+            .then((data) => {            
+                ajaxSpinner.classList = "hidden"
+                data.collection.items.forEach(item => {
+                    // variabel för texten på sidan
+                    const description = item.data[0].description
+                    // variabel för mediatypen
+                    const media_type = item.data[0].media_type
+                    // variabel för bilden på sidan
+                    const image = item.links[0].href
+                    // variabel för bildbeskrivning
+                    const imageDescription = item.data[0].description
+                    // data till domen
+                    container.innerHTML += `<p>${description}</p> <img src="${image}" alt="${imageDescription}">`
 
-    // metoden fetch
-    fetch(url)
-        // svaret från sökningen
-        .then(response => response.json())
-        .then((data) => {            
-            data.collection.items.forEach(item => {
-                // variabel för texten på sidan
-                const description = item.data[0].description
-                // variabel för mediatypen
-                const media_type = item.data[0].media_type
-                // variabel för bilden på sidan
-                const image = item.links[0].href
-                // variabel för bildbeskrivning
-                const imageDescription = item.data[0].description
-                // data till domen
-                container.innerHTML += `<p>${description}</p> <img src="${image}" alt="${imageDescription}">`
+                });
+                for (const key in data) {
+    
+                    render(key, data[key])
+                }
             });
-            for (const key in data) {
-
-                render(key, data[key])
-            }
-        });
-
-});
+        
+    }
+    
+    })
 
 function render(property, value) {
     

@@ -5,3 +5,6 @@ background-color: cornflowerblue;
 .hidden {
 display: none;
 }
+img {
+width: 100%;
+}
