@@ -1,4 +1,4 @@
-onst contentEl = document.getElementById("container")
+const contentEl = document.getElementById("container")
 // skapar en assymkrom funktion
 async function GetInfoFromNasa(evt) {
     // skapar en variabel för fetch
