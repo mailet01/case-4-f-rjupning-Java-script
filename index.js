@@ -34,19 +34,20 @@ button.addEventListener("click", () => {
         // loggar ut det som har sökts på sidan    
         console.log(inputData.value);
         // tömmer inputfältet    //     
-        inputData.value = "";
         let search = inputData.value;
+        inputData.value = "";
+    
         // koppla värdet till URL:n
-        baseUrl = baseUrl + search
+        // baseUrl = baseUrl + search
 
         // deklarerar en variabel för att kunna filtrera på år
         let year = document.getElementById("year").value
         // start år att filtrera på
-        baseUrl = baseUrl + "&year_start=" + year
+        // baseUrl = baseUrl + "&year_start=" + year
         // deklarerar en variabel för slutåret att filtrera på
         let yearEnd = document.getElementById("year-end").value;
         // slutåret att filtrera på:
-        baseUrl = baseUrl + "&year_end=" + yearEnd
+        // baseUrl = baseUrl + "&year_end=" + yearEnd
         
         // tömma inputfältet
         // metoden fetch
